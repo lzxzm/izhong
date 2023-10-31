@@ -1,27 +1,187 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>消消乐</title>
-		<link rel="stylesheet" href="./css/index.css?v=1.0.0">
-	</head>
-	<body>
-		<div class="lucky-star" id="luckyStar">
-			<div class="score-target">
-				<p class="score-level">关卡 <span id="scoreLevel"></span></p>
-				<p>目标：<span id="scoreTarget"></span></p>
-			</div>
-			<div class="score-current">得分<span id="scoreCurrent"></span></div>
-			<div class="score-select" id="scoreSelect"></div>
-			<ul class="star-list" id="starList"> </ul>
-		</div>
-	</body> 
-	<script src="./js/countUp.js"></script>
-	<script src="./js/index.js"></script>
-	<script src="./js/resize.js"></script>
-	<script>
-		new PopStar() 
-	</script>
+<!--
+ * @Description: 
+ * @Autor: liziming
+ * @Date: 2023-10-29 01:34:07
+ * @LastEditors: liziming
+ * @LastEditTime: 2023-10-29 05:19:15
+-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./index.css">
+  <link href=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+        crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-/mhDoLbDldZc3qpsJHpLogda//BVZbgYuw6kof4u2FrCedxOtgRZDTHgHUhOCVim"
+          crossorigin="anonymous"></script>
+
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.js"> </script>
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+  <script>document.write("<script type='text/javascript' src='flexible.min.js?v=" + Date.now() + "'><\/script>");</script>
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <!-- <div class="header">
+    <div class="warp">
+      <div class="icon">
+        <img class="icon-img" style="width: 30px;" src="./image/more.png" alt="" srcset="">
+      </div>
+    </div>
+  </div> -->
+  <!-- <div class="header">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Izhong</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                 aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div> -->
+
+  <div class="content">
+    <div class="banner">
+      <span class="animate__animated animate__bounceOut">
+
+      </span>
+    </div>
+
+    <div class="content-personal ">
+      <div>
+        <div class="content-personal-div">
+          <div class="clearfix content-personal-content">
+            <div class="content-personal-content-text">
+              <p class="title">钟晨瑶 ZCY</p>
+
+              <p class="text">
+                【基础信息】
+              <p>微博：@钟晨瑶</p>
+              <p>小🍠： 钟晨瑶ZCY（账号：420315736）</p>
+              <p>🎶/✋：战斗天使ZCY</p>
+              <p>院校：中央戏剧学院在读</p>
+              <p>粉丝名：瑶瑶乐</p>
+              <p>应援色：蓝色</p>
+              </p>
+              <p class="text">
+                【已播作品】
+              <p>竖屏微电影《遇见你》</p>
+              <p>短片《离校日》</p>
+              <p>短片《淙淙》</p>
+              <p>电视剧《谢公子的酒》饰演小棠</p>
+              <p>互动影视游戏《完蛋！我被美女包围了》饰演郑梓妍</p>
+              </p>
+              <p class="text">
+                【待播作品】
+              <p>《热搜》预计2023年12月1日上映</p>
+              <p>《二次呼吸》</p>
+              </p>
+            </div>
+            <div class="content-personal-content-photo">
+              <img src="image/about/mike.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="./image/swiper/1.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="./image/swiper/2.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="./image/swiper/3.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="./image/swiper/4.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="./image/swiper/5.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="./image/swiper/6.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="./image/swiper/7.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="./image/swiper/8.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="./image/swiper/9.jpg" alt=""></div>
+      </div>
+    </div>
+   
+
+    <div>
+
+
+      
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="float-icon">
+    <a href="https://weibo.com/u/3179885602?tabtype=album" title="微博">
+      <img src="./image/wb.png" alt="">
+    </a>
+    <a href="https://www.douyin.com/user/MS4wLjABAAAAsT9aCr8lnmQHMzfD1nQmLZ9mHoQPg4P5LMbSUkncMik?is_search=0&list_name=follow&nt=0"
+       title="抖音">
+      <img src="./image/dy.png" alt="">
+    </a>
+    <a href="https://www.kuaishou.com/profile/3x95q79dmzpp4cw" title="快手">
+      <img src="./image/ks.png" alt="">
+    </a>
+  </div>
+  <script>
+    var slidesPerView = 1
+    var mySwiper = new Swiper('.swiper', {
+      effect: 'coverflow',
+      slidesPerView: slidesPerView,
+      centeredSlides: true,
+      autoplay: true,
+      loop: true,
+      coverflowEffect: {
+        rotate: 30,
+        stretch: 10,
+        depth: 60,
+        modifier: 2,
+        slideShadows: true
+      },
+    })
+
+  </script>
+
+</body>
+
 </html>
